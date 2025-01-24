@@ -1,0 +1,87 @@
+.model FSM
+.inputs MOSSA PESCATO UNO 
+.outputs VITTORIA
+
+# solo giocatore uno
+
+.start_kiss
+.i 3
+.o 1
+.p 14
+.s 1
+.r RST
+
+#RST RST
+
+000 RST RST 0
+001 RST RST 0
+010 RST RST 0
+100 RST RST 0
+101 RST RST 0
+110 RST RST 0
+111 RST RST 0
+
+#RST 00
+
+
+011 RST 00 0
+
+
+# 00 01
+
+100 00 01 0
+110 00 01 0
+111 00 01 0
+
+# 01 10
+
+100 01 10 0
+110 01 10 0
+111 01 10 0
+
+# 10 11
+
+100 10 11 0
+110 10 11 0
+111 10 11 0
+
+# 11 00
+
+100 11 00 0
+110 11 00 0
+111 11 00 0
+#transizione in vittoria
+
+101 00 VIT 1
+101 01 VITT 1
+101 10 VITT 1
+101 11 VITT 1
+
+# 00 01 10 11 RST
+
+#00 	RST
+000 00 RST 0
+001 00 RST 0
+010 00 RST 0
+
+#01 RST
+
+000 01 RST 0
+001 01 RST 0
+010 01 RST 0
+
+#10 RST 
+
+000 10 RST 0
+001 10 RST 0
+010 10 RST 0
+
+#11 RST 
+
+000 11 RST 0
+001 11 RST 0
+010 11 RST 0
+
+
+.end_kiss
+
